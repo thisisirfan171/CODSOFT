@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Shoe Company</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            color: #333;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            color: #444;
+        }
+
+        .about {
+            background: #eee;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 30%;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            margin: 15px 0;
+            font-size: 1.6em;
+            color: #222;
+        }
+
+        .product p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .contact {
+            background: #eee;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact form label {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #444;
+        }
+
+        .contact form input, .contact form textarea {
+            padding: 10px;
+            margin-top: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact form button {
+            padding: 10px 20px;
+            border: none;
+            background: #000;
+            color: #fff;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .contact form button:hover {
+            background: #333;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Luxury Shoe Company</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about">
+                <p>Welcome to Luxury Shoe Company, where we combine exquisite craftsmanship with the finest materials to create shoes that define elegance and sophistication. Our collection is designed for those who appreciate the art of shoemaking and the comfort of a perfectly crafted pair.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="shoe1.jpg" alt="Shoe 1">
+                    <h3>Elegant Stiletto</h3>
+                    <p>Experience the pinnacle of elegance with our handcrafted stilettos, perfect for any occasion.</p>
+                </div>
+                <div class="product">
+                    <img src="shoe2.jpg" alt="Shoe 2">
+                    <h3>Classic Loafers</h3>
+                    <p>Our classic loafers combine timeless style with modern comfort, ideal for everyday wear.</p>
+                </div>
+                <div class="product">
+                    <img src="shoe3.jpg" alt="Shoe 3">
+                    <h3>Luxury Sneakers</h3>
+                    <p>Step out in style with our luxury sneakers, designed for both fashion and function.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact">
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Luxury Shoe Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
