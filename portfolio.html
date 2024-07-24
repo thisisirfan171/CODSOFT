@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        header .navlist {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header .navlist li {
+            display: inline;
+        }
+
+        header .navlist a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        header .navlist a:hover,
+        header .navlist a.active {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .bx-menu {
+            display: none;
+        }
+
+        .home {
+            background: linear-gradient(to bottom right, #007bff, #00c6ff);
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .home h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .home h3 span {
+            color: #ffdd59;
+        }
+
+        .home p {
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .home .button .btn {
+            background: #ffdd59;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .home .button .btn:hover {
+            background: #ffcc00;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .passport-size {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .about-text h2 span {
+            color: #007bff;
+        }
+
+        .about-text p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .about-text .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .about-text .btn:hover {
+            background: #0056b3;
+        }
+
+        .services {
+            padding: 50px 0;
+            background: #f4f4f4;
+        }
+
+        .services .main-text h2 span {
+            color: #007bff;
+        }
+
+        .services-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .services .box {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            transition: transform 0.3s ease;
+        }
+
+        .services .box:hover {
+            transform: translateY(-10px);
+        }
+
+        .services .s-icons i {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .services .btn {
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .services .btn:hover {
+            background: #0056b3;
+        }
+
+        .contact {
+            padding: 50px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .contact h2 span {
+            color: #007bff;
+        }
+
+        .contact p {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .contact .list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact .list li {
+            margin: 10px 0;
+        }
+
+        .contact .list a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .contact-icons a {
+            color: #007bff;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-icons a:hover {
+            color: #0056b3;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form .submit {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form .submit:hover {
+            background: #0056b3;
+        }
+
+        .end {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .end .last-text {
+            margin-bottom: 10px;
+        }
+
+        .end .top a {
+            color: #fff;
+            font-size: 24px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .end .top a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">My Portfolio</a>
+        <ul class="navlist">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <!--------- Home Section --------------->
+    <section class="home" id="home">
+        <div class="home-text">
+            <div class="slide">
+                <span class="one"><small>Hello</small></span>
+                <span class="two"><small>I'm</small></span>
+            </div>
+            <h1><b>MD IRFAN SAFI</b></h1>
+            <h3>Web<span> Developer.</span></h3>
+            <p><i>Aspiring Web Developer ready to bring ideas to life</i><br> Coming for about services make best effort.</p>
+            <div class="button">
+                <a href="#about" class="btn">About Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!--------- About Section --------------->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="my_image.jpg" alt="My Image" class="passport-size">
+        </div>
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <h4><i>Web Developer!</i></h4>
+            <p><strong>In the world of web development, I'm a passionate newcomer, eager to leave my mark through creative solutions and a commitment to continuous growth. With a thirst for knowledge and a love for problem-solving, I embrace each challenge as an opportunity to learn and evolve, striving to make a meaningful impact in this dynamic field.</strong></p>
+            <a href="#" class="btn">More About</a>
+        </div>
+    </section>
+
+    <!----------- My Skills Section -------------->
+    <section class="services" id="services">
+        <div class="main-text">
+            <h2><span>My</span>Skills</h2>
+        </div>
+        <div class="services-content">
+            <div class="box">
+                <div class="s-icons">
+                    <i class='bx bx-mobile-alt'></i>
+                </div>
+                <h3>Web Developer</h3>
+                <p>One Way to categories the activities is in terms of the professional's area of experience such as competitive analysis, corporate strategy.
+
+                    .</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="box">
+                <div class="s-icons">
+                    <i class='bx bx-code-alt'></i>
+                </div>
+                <h3>Responsive Design</h3>
+                <p>I ensure that all websites I develop are fully responsive.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="box">
+                <div class="s-icons">
+                    <i class='bx bx-edit-alt'></i>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!------------------ Contact Section ------------>
+    <section class="contact" id="contact">
+        <div class="contact-text">
+            <h2>Contact <span>Me!</span></h2>
+            <h4>If you have any project in your mind.</h4>
+            <p>I'm a web Developer - Turning caffeine into code, one line at a time.</p>
+            <div class="list">
+                <li><a href="tel:8102897928">8102897928</a></li>
+                <li><a href="mailto:itisiirfan9091@gmail.com">itisiirfan9091@gmail.com</a></li>
+            </div>
+            <div class="contact-icons">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Mobile Number" required>
+                <textarea name="" id="" cols="35" rows="10" placeholder="How Can I Help You" required></textarea>
+                <input type="submit" value="Send Message" class="submit" required>
+            </form>
+        </div>
+    </section>
+
+    <!--------- End Section ---------->
+    <section class="end">
+        <div class="last-text">
+            <p>Design By Irfan</p>
+        </div>
+        <div class="top">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </section>
+</body>
+
+</html>
